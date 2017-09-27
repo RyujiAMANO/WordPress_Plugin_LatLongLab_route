@@ -2,7 +2,7 @@
 /**
  * Class SampleTest
  *
- * @package Latlonglab_route
+ * @package Latlonglab_Route
  */
 
 /**
