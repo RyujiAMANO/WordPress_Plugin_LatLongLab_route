@@ -1,14 +1,14 @@
 <?php
 /**
-   Plugin Name: embed latlonglab route
-   Plugin URI:
-   Description:
-   Version: 1.0
-   Author: Ryuji
-   Author URI: http://ryus.co.jp
-   License: GPL2
+	Plugin Name: embed latlonglab route
+	Plugin URI:
+	Description:
+	Version: 1.0
+	Author: Ryuji
+	Author URI: http://ryus.co.jp
+	License: GPL2
 
-   @package LatLongLab-route
+	@package LatLongLab-route
  */
 
 wp_embed_register_handler( 'latlonglab_route', '#http://latlonglab\.yahoo\.co\.jp/route/watch\?id=([0-9a-z]+)#i', 'wp_embed_handler_latlonglab_route' );
@@ -23,9 +23,9 @@ wp_embed_register_handler( 'latlonglab_route', '#http://latlonglab\.yahoo\.co\.j
  */
 function wp_embed_handler_latlonglab_route( $matches, $attr, $url, $rawattr ) {
 
-	$width  = get_option( 'embed_size_w' );
+	$width = get_option( 'embed_size_w' );
 	if ( intval( $width ) === 0 ) {
-		$width = $GLOBALS['content_width'];
+		$width  = $GLOBALS['content_width'];
 		$height = intval( $width * 0.75 );
 	} else {
 		$height = get_option( 'embed_size_h' );
