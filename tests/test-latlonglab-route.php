@@ -1,14 +1,14 @@
 <?php
 /**
- * Class SampleTest
+ * Class LatLongLabRouteTest
  *
  * @package Latlonglab_Route
  */
 
 /**
- * Sample test case.
+ * LatLongLabRoute test case.
  */
-class SampleTest extends WP_UnitTestCase {
+class LatLongLabRouteTest extends WP_UnitTestCase {
 
 	/**
 	 * A single example test.
