@@ -11,7 +11,7 @@
 	@package LatLongLab-route
  */
 
-wp_embed_register_handler( 'latlonglab_route', '#http://latlonglab\.yahoo\.co\.jp/route/watch\?id=([0-9a-z]+)#i', 'wp_embed_handler_latlonglab_route' );
+wp_embed_register_handler( 'latlonglab_route', '#(https?)://latlonglab\.yahoo\.co\.jp/route/watch\?id=([0-9a-z]+)#i', 'wp_embed_handler_latlonglab_route' );
 
 /**
  *  LatLongLab-route の地図を埋め込むためのハンドラ.
@@ -32,8 +32,8 @@ function wp_embed_handler_latlonglab_route( $matches, $attr, $url, $rawattr ) {
 	}
 
 	$embed = sprintf(
-		'<script type="text/javascript" encoding="UTF-8" src="http://latlonglab.yahoo.co.jp/route/paste?id=%s&width=%d&height=%d&mapstyle=map&graph=true&maponly=false"></script>',
-		esc_attr( $matches[1] ),
+		'<script type="text/javascript" encoding="UTF-8" src="%s://latlonglab.yahoo.co.jp/route/paste?id=%s&width=%d&height=%d&mapstyle=map&graph=true&maponly=false"></script>',
+		$matches[1], esc_attr( $matches[2] ),
 		$width,
 		$height
 	);
